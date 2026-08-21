@@ -111,7 +111,7 @@ img {
 }
 
 .cover-art {
-  object-fit: cover;
+  object-fit: fill;
   object-position: 50% 50%;
   transition:
     opacity 500ms ease 720ms,
@@ -121,7 +121,7 @@ img {
 .cover-flap {
   background-image: var(--cover-image);
   background-position: 50% 50%;
-  background-size: cover;
+  background-size: 100% 100%;
   backface-visibility: hidden;
   filter: drop-shadow(0 20px 34px rgba(0, 0, 0, 0.28));
   transition:
