@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@400;500;600;700&display=swap');
 
 :root {
   --paper: #f7f1e6;
@@ -9,7 +9,9 @@
   --line: rgba(61, 57, 49, 0.13);
   --gold: #b7a171;
   --white: #fffaf0;
-  font-family: 'Inter', Arial, sans-serif;
+  --font-serif: 'Libre Baskerville', Georgia, serif;
+  --font-sans: 'Source Sans 3', Arial, sans-serif;
+  font-family: var(--font-sans);
   color: var(--ink);
   background: var(--paper);
 }
@@ -174,7 +176,7 @@ img {
 }
 
 .cover-letter span:first-child {
-  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-family: var(--font-serif);
   font-size: clamp(2.2rem, 10vw, 3.25rem);
   line-height: 0.96;
   text-transform: uppercase;
@@ -331,7 +333,7 @@ h1,
 h2,
 h3 {
   margin: 0;
-  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-family: var(--font-serif);
   font-weight: 400;
   letter-spacing: 0;
 }
@@ -364,7 +366,7 @@ p {
 
 .script {
   color: inherit;
-  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-family: var(--font-serif);
   font-style: italic;
   font-size: clamp(1.35rem, 6vw, 1.9rem);
   line-height: 1.25;
@@ -398,7 +400,7 @@ p {
 }
 
 .countdown-unit strong {
-  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-family: var(--font-serif);
   font-size: clamp(2rem, 9vw, 2.7rem);
   font-weight: 400;
   line-height: 1;
@@ -568,7 +570,7 @@ p {
 figcaption {
   margin-top: 22px;
   color: var(--ink);
-  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-family: var(--font-serif);
   font-size: 1.25rem;
   font-style: italic;
 }
@@ -591,7 +593,7 @@ figcaption {
 
 .then-heading span {
   margin: 0 14px;
-  font-family: 'Inter', Arial, sans-serif;
+  font-family: var(--font-sans);
   font-size: 0.72em;
 }
 
@@ -737,7 +739,7 @@ figcaption {
   gap: 8px;
   margin: 0 0 16px;
   color: var(--ink);
-  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-family: var(--font-serif);
   font-size: clamp(1.55rem, 7vw, 2rem);
   line-height: 1.18;
   text-decoration-thickness: 1px;
@@ -791,7 +793,7 @@ figcaption {
 .closing-copy p {
   margin: 0 0 28px;
   color: var(--ink);
-  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-family: var(--font-serif);
   font-size: clamp(1.65rem, 7.5vw, 2.2rem);
   line-height: 1.35;
 }
@@ -799,7 +801,7 @@ figcaption {
 .closing-copy h2 {
   margin: 56px 0 26px;
   color: var(--forest);
-  font-family: 'Inter', Arial, sans-serif;
+  font-family: var(--font-sans);
   font-size: clamp(1.18rem, 5.4vw, 1.55rem);
   font-weight: 500;
   letter-spacing: 0.28em;
