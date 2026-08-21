@@ -501,7 +501,7 @@ p {
 }
 
 .photo-tile.walk .photo-art {
-  background-image: url('/images/hero.jpg');
+  background-image: var(--hero-image);
   background-size: cover;
   background-position: 68% 48%;
 }

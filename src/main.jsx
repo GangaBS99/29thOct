@@ -4,6 +4,8 @@ import { ExternalLink, Pause, Play } from 'lucide-react';
 import { weddingData } from './data/wedding';
 import './styles.css';
 
+const heroImage = `${import.meta.env.BASE_URL}images/hero.jpg`;
+
 function useCountdown(targetDate) {
   const readTime = () => {
     const diff = Math.max(new Date(targetDate).getTime() - Date.now(), 0);
@@ -61,7 +63,7 @@ function Countdown() {
 function Hero() {
   return (
     <section className="hero" id="home">
-      <img src="/images/hero.jpg" alt="Ganga and Goutham in Thiruvananthapuram" />
+      <img src={heroImage} alt="Ganga and Goutham in Thiruvananthapuram" />
       <div className="grain" />
       <div className="hero-copy reveal">
         <Label>{weddingData.place}</Label>
@@ -137,7 +139,7 @@ function ThenNow() {
           <figcaption>2016</figcaption>
         </figure>
         <figure className="compare-card current">
-          <img src="/images/hero.jpg" alt="Ganga and Goutham in 2026" />
+          <img src={heroImage} alt="Ganga and Goutham in 2026" />
           <figcaption>2026</figcaption>
         </figure>
       </div>
@@ -256,7 +258,7 @@ function Closing() {
         <Label>{weddingData.date.dotted}</Label>
         <Label>Thiruvananthapuram</Label>
       </div>
-      <img src="/images/hero.jpg" alt="Ganga and Goutham" />
+      <img src={heroImage} alt="Ganga and Goutham" />
     </section>
   );
 }
@@ -269,7 +271,7 @@ function Cover({ open, onOpen }) {
       onClick={onOpen}
       aria-label="Open wedding invitation"
     >
-      <img src="/images/hero.jpg" alt="" aria-hidden="true" />
+      <img src={heroImage} alt="" aria-hidden="true" />
       <span className="cover-shade" />
       <span className="cover-frame">
         <span className="cover-small">Wedding Invitation</span>
@@ -302,7 +304,7 @@ function App() {
   return (
     <>
       <Cover open={coverOpen} onOpen={() => setCoverOpen(true)} />
-      <main className={coverOpen ? 'invitation revealed' : 'invitation'}>
+      <main className={coverOpen ? 'invitation revealed' : 'invitation'} style={{ '--hero-image': `url("${heroImage}")` }}>
         <Hero />
         <Story />
         <Frames />
