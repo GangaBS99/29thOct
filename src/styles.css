@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Source+Sans+3:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600;700&display=swap');
 
 :root {
   --paper: #f7f1e6;
@@ -9,8 +9,8 @@
   --line: rgba(61, 57, 49, 0.13);
   --gold: #b7a171;
   --white: #fffaf0;
-  --font-serif: 'Libre Baskerville', Georgia, serif;
-  --font-sans: 'Source Sans 3', Arial, sans-serif;
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Inter', Arial, sans-serif;
   font-family: var(--font-sans);
   color: var(--ink);
   background: var(--paper);
