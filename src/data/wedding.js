@@ -13,6 +13,8 @@ export const weddingData = {
     name: 'Alakapuri Convention Center',
     city: 'Thiruvananthapuram, Kerala',
   },
+  mapsUrl:
+    'https://www.google.com/maps/search/?api=1&query=Alakapuri%20Convention%20Center%20Thiruvananthapuram%20Kerala',
   story: [
     {
       period: '2016',
@@ -59,6 +61,34 @@ export const weddingData = {
         { name: 'Mayadevi & Harilal TR', role: 'Parents' },
         { name: 'Gokul H', role: 'Brother' },
       ],
+    },
+  ],
+  travel: [
+    {
+      label: 'Venue',
+      title: 'Alakapuri Convention Center',
+      copy: 'Thiruvananthapuram, Kerala. Parking is available on site.',
+    },
+    {
+      label: 'Directions',
+      title: 'Open in Maps',
+      copy: 'Live navigation straight to the venue gate.',
+      link: true,
+    },
+    {
+      label: 'By Air',
+      title: 'Trivandrum International Airport',
+      copy: 'Roughly 30-40 minutes by taxi, depending on traffic. Cabs are easy to find at arrivals.',
+    },
+    {
+      label: 'By Train',
+      title: 'Thiruvananthapuram Central',
+      copy: 'About 20 minutes by taxi or auto-rickshaw from the station.',
+    },
+    {
+      label: 'Nearby Stays',
+      title: 'Where to sleep',
+      copy: 'Hotels around Thampanoor, Vazhuthacaud and Kowdiar keep you within a short drive of the venue.',
     },
   ],
 };

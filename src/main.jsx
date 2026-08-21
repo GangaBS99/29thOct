@@ -1,23 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
-import { Pause, Play } from 'lucide-react';
+import { ExternalLink, Pause, Play } from 'lucide-react';
 import { weddingData } from './data/wedding';
 import './styles.css';
 
 const heroImage = `${import.meta.env.BASE_URL}images/hero.jpg`;
 const envelopeCoverImage = `${import.meta.env.BASE_URL}images/envelope-cover.jpeg`;
-const venueDestination = `${weddingData.venue.name}, ${weddingData.venue.city}`;
-
-function buildMapsUrl(origin) {
-  const params = new URLSearchParams({
-    api: '1',
-    destination: venueDestination,
-    travelmode: 'driving',
-  });
-
-  if (origin) params.set('origin', origin);
-  return `https://www.google.com/maps/dir/?${params.toString()}`;
-}
 
 function useCountdown(targetDate) {
   const readTime = () => {
@@ -187,41 +175,6 @@ function Family() {
 }
 
 function Venue() {
-  const [directionsStatus, setDirectionsStatus] = useState('');
-
-  const openDirections = () => {
-    const mapsWindow = window.open('about:blank', '_blank');
-    if (mapsWindow) mapsWindow.opener = null;
-
-    const openMaps = (url) => {
-      if (mapsWindow) {
-        mapsWindow.location.href = url;
-      } else {
-        window.location.href = url;
-      }
-    };
-
-    if (!navigator.geolocation) {
-      setDirectionsStatus('Opening Maps for the venue.');
-      openMaps(buildMapsUrl());
-      return;
-    }
-
-    setDirectionsStatus('Fetching your location for live distance in Maps...');
-    navigator.geolocation.getCurrentPosition(
-      ({ coords }) => {
-        const origin = `${coords.latitude},${coords.longitude}`;
-        setDirectionsStatus('Maps will show the live route distance from your location.');
-        openMaps(buildMapsUrl(origin));
-      },
-      () => {
-        setDirectionsStatus('Location permission was skipped. Opening the venue in Maps.');
-        openMaps(buildMapsUrl());
-      },
-      { enableHighAccuracy: true, timeout: 10000, maximumAge: 300000 },
-    );
-  };
-
   return (
     <section className="forest venue" id="wedding">
       <div className="venue-copy reveal">
@@ -234,10 +187,35 @@ function Venue() {
       <figure className="venue-photo reveal">
         <div />
       </figure>
-      <button className="underlink light reveal" type="button" onClick={openDirections}>
+      <a className="underlink light reveal" href={weddingData.mapsUrl} target="_blank" rel="noreferrer">
         Get Directions <span aria-hidden="true">{'->'}</span>
-      </button>
-      {directionsStatus ? <p className="directions-status reveal">{directionsStatus}</p> : null}
+      </a>
+    </section>
+  );
+}
+
+function GettingThere() {
+  return (
+    <section className="paper travel" id="location">
+      <div className="section-title reveal">
+        <Label>Section Six</Label>
+        <h2>Getting There</h2>
+      </div>
+      <div className="travel-list reveal">
+        {weddingData.travel.map((item) => (
+          <article className="travel-item" key={item.label}>
+            <Label>{item.label}</Label>
+            {item.link ? (
+              <a href={weddingData.mapsUrl} target="_blank" rel="noreferrer">
+                {item.title} <ExternalLink size={16} aria-hidden="true" />
+              </a>
+            ) : (
+              <h3>{item.title}</h3>
+            )}
+            <p>{item.copy}</p>
+          </article>
+        ))}
+      </div>
     </section>
   );
 }
@@ -254,7 +232,7 @@ function Music() {
   return (
     <section className="sage music" id="song">
       <div className="section-title centered reveal">
-        <Label>Section Six</Label>
+        <Label>Section Seven</Label>
         <h2 className="script">One song. A thousand memories.</h2>
       </div>
       <button className="play-button reveal" type="button" onClick={toggle}>
@@ -337,6 +315,7 @@ function App() {
         <ThenNow />
         <Family />
         <Venue />
+        <GettingThere />
         <Music />
         <Closing />
       </main>

@@ -711,12 +711,43 @@ figcaption {
   margin-top: 68px;
 }
 
-.directions-status {
-  width: min(320px, calc(100% - 44px));
-  margin: 22px auto 0;
-  color: rgba(255, 250, 240, 0.72);
-  font-size: 0.88rem;
-  line-height: 1.55;
+.travel .section-title {
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 46px;
+}
+
+.travel-list {
+  width: 100%;
+  margin: 0 auto;
+  border-bottom: 1px solid var(--line);
+}
+
+.travel-item {
+  padding: 38px 0;
+  border-top: 1px solid var(--line);
+}
+
+.travel-item .label {
+  margin-bottom: 18px;
+}
+
+.travel-item h3,
+.travel-item a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 16px;
+  color: var(--ink);
+  font-family: var(--font-serif);
+  font-size: clamp(1.55rem, 7vw, 2rem);
+  line-height: 1.18;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 5px;
+}
+
+.travel-item p {
+  max-width: 880px;
+  margin: 0;
 }
 
 .music {
