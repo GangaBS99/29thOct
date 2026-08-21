@@ -64,12 +64,12 @@ function Countdown() {
 function Hero() {
   return (
     <section className="hero" id="home">
-      <img src={heroImage} alt="Ganga and Goutham in Thiruvananthapuram" />
+      <img src={heroImage} alt="Ganga and Goutham together" />
       <div className="grain" />
       <div className="hero-copy reveal">
-        <Label>{weddingData.place}</Label>
+        <Label>2016 . 2017 . 2026</Label>
         <h1>{weddingData.couple.display}</h1>
-        <p className="script">A love story that began in Thiruvananthapuram.</p>
+        <p className="script">From classmates to forever, one chapter at a time.</p>
         <p className="date-line">{weddingData.date.dotted}</p>
         <Countdown />
         <a className="underlink light" href="#story">
