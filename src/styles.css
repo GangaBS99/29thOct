@@ -58,12 +58,11 @@ img {
 }
 
 .invitation {
-  width: min(100%, 430px);
+  width: 100%;
   min-height: 100vh;
   margin: 0 auto;
   overflow: hidden;
   background: var(--paper);
-  box-shadow: 0 0 70px rgba(0, 0, 0, 0.26);
 }
 
 .cover {
@@ -72,7 +71,7 @@ img {
   z-index: 100;
   display: grid;
   place-items: center;
-  width: min(100%, 430px);
+  width: 100%;
   margin: 0 auto;
   padding: 0;
   border: 0;
@@ -156,8 +155,8 @@ img {
 
 .cover-letter {
   position: absolute;
-  left: 8%;
-  right: 8%;
+  left: 5%;
+  right: 5%;
   bottom: 10%;
   z-index: 2;
   display: grid;
