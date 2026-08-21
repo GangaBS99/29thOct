@@ -5,6 +5,7 @@ import { weddingData } from './data/wedding';
 import './styles.css';
 
 const heroImage = `${import.meta.env.BASE_URL}images/hero.jpg`;
+const envelopeCoverImage = `${import.meta.env.BASE_URL}images/envelope-cover.jpeg`;
 
 function useCountdown(targetDate) {
   const readTime = () => {
@@ -271,13 +272,16 @@ function Cover({ open, onOpen }) {
       onClick={onOpen}
       aria-label="Open wedding invitation"
     >
-      <img src={heroImage} alt="" aria-hidden="true" />
-      <span className="cover-shade" />
-      <span className="cover-frame">
-        <span className="cover-small">Wedding Invitation</span>
-        <span className="cover-names">Ganga & Goutham</span>
-        <span className="cover-date">{weddingData.date.dotted}</span>
-        <span className="cover-place">Thiruvananthapuram</span>
+      <span className="cover-envelope" style={{ '--cover-image': `url("${envelopeCoverImage}")` }}>
+        <img className="cover-art" src={envelopeCoverImage} alt="" aria-hidden="true" />
+        <span className="cover-letter" aria-hidden="true">
+          <span>{weddingData.couple.display}</span>
+          <span>{weddingData.date.dotted}</span>
+        </span>
+        <span className="cover-flap cover-flap-top" aria-hidden="true" />
+        <span className="cover-flap cover-flap-left" aria-hidden="true" />
+        <span className="cover-flap cover-flap-right" aria-hidden="true" />
+        <span className="cover-flap cover-flap-bottom" aria-hidden="true" />
         <span className="cover-action">Tap to open</span>
       </span>
     </button>
