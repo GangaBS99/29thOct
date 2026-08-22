@@ -8,7 +8,7 @@ import venueImage from './assets/Venue.jpeg';
 import './styles.css';
 
 const heroImage = `${import.meta.env.BASE_URL}images/hero.jpg`;
-const envelopeCoverImage = `${import.meta.env.BASE_URL}images/envelope-cover.jpeg`;
+const envelopeCoverImage = `${import.meta.env.BASE_URL}images/cover-invitation.png`;
 
 function useCountdown(targetDate) {
   const readTime = () => {
