@@ -27,12 +27,12 @@ export const weddingData = {
       copy: 'Friendship became something more.',
     },
     {
-      period: 'Masters',
+      period: '2020',
       title: 'Growing up, together.',
       copy: 'Different challenges, new ambitions, and somehow, the same person beside us.',
     },
     {
-      period: 'First Jobs',
+      period: '2022',
       title: 'Building our lives.',
       copy: 'We stepped into our careers in the same year, beginning another chapter of growing together.',
     },
@@ -44,7 +44,7 @@ export const weddingData = {
   ],
   frames: [
     { title: 'The college days.', variant: 'college' },
-    { title: 'The questionable umbrella era.', variant: 'rain' },
+    { title: 'First Job.', variant: 'rain' },
     { title: 'The long walks home.', variant: 'walk' },
   ],
   families: [
