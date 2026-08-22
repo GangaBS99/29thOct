@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
-import { ExternalLink, Pause, Play } from 'lucide-react';
+import { Pause, Play } from 'lucide-react';
 import { weddingData } from './data/wedding';
+
 import './styles.css';
 
 const heroImage = `${import.meta.env.BASE_URL}images/hero.jpg`;
@@ -136,8 +137,9 @@ function ThenNow() {
       </div>
       <div className="compare-grid reveal">
         <figure className="compare-card old">
-          <div className="photo-art" />
+           <img src={'src/assets/2016 as couple.jpg'} alt="Ganga and Goutham in 2016" />
           <figcaption>2016</figcaption>
+        
         </figure>
         <figure className="compare-card current">
           <img src={heroImage} alt="Ganga and Goutham in 2026" />
@@ -190,32 +192,6 @@ function Venue() {
       <a className="underlink light reveal" href={weddingData.mapsUrl} target="_blank" rel="noreferrer">
         Get Directions <span aria-hidden="true">{'->'}</span>
       </a>
-    </section>
-  );
-}
-
-function GettingThere() {
-  return (
-    <section className="paper travel" id="location">
-      <div className="section-title reveal">
-        <Label>Section Six</Label>
-        <h2>Getting There</h2>
-      </div>
-      <div className="travel-list reveal">
-        {weddingData.travel.map((item) => (
-          <article className="travel-item" key={item.label}>
-            <Label>{item.label}</Label>
-            {item.link ? (
-              <a href={weddingData.mapsUrl} target="_blank" rel="noreferrer">
-                {item.title} <ExternalLink size={16} aria-hidden="true" />
-              </a>
-            ) : (
-              <h3>{item.title}</h3>
-            )}
-            <p>{item.copy}</p>
-          </article>
-        ))}
-      </div>
     </section>
   );
 }
@@ -315,7 +291,6 @@ function App() {
         <ThenNow />
         <Family />
         <Venue />
-        <GettingThere />
         <Music />
         <Closing />
       </main>
