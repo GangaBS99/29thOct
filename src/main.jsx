@@ -187,7 +187,7 @@ function Venue() {
         <Label>{weddingData.venue.city}</Label>
       </div>
       <figure className="venue-photo reveal">
-        <div />
+        <img src={"src/assets/Venue.jpeg"} alt="Alakapuri Convention Center" />
       </figure>
       <a className="underlink light reveal" href={weddingData.mapsUrl} target="_blank" rel="noreferrer">
         Get Directions <span aria-hidden="true">{'->'}</span>
