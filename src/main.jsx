@@ -137,7 +137,7 @@ function ThenNow() {
       </div>
       <div className="compare-grid reveal">
         <figure className="compare-card old">
-           <img src={'src/assets/2016 as couple.jpg'} alt="Ganga and Goutham in 2016" />
+           <img src={'src/assets/old-photo.jpg'} alt="Ganga and Goutham in 2016" />
           <figcaption>2016</figcaption>
         
         </figure>
