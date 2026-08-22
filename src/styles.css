@@ -527,8 +527,7 @@ p {
   scroll-snap-align: start;
 }
 
-.photo-art,
-.venue-photo div {
+.photo-art {
   position: relative;
   overflow: hidden;
   aspect-ratio: 1 / 1.14;
@@ -689,22 +688,10 @@ figcaption {
   margin: 0;
 }
 
-.venue-photo div {
+.venue-photo img {
   width: 100%;
   aspect-ratio: 16 / 9;
-  background:
-    linear-gradient(180deg, rgba(247, 241, 230, 0.16), rgba(40, 84, 59, 0.16)),
-    linear-gradient(90deg, #233b2d 0 14%, #d69a5b 14% 20%, #f2dcc2 20% 28%, #284c38 28% 34%, #f6ecd8 34% 65%, #2c503b 65% 100%);
-}
-
-.venue-photo div::before {
-  content: '';
-  position: absolute;
-  inset: 20% 8% 0;
-  background:
-    linear-gradient(90deg, transparent 0 12%, rgba(255, 250, 240, 0.8) 12% 18%, transparent 18% 26%, rgba(255, 250, 240, 0.78) 26% 32%, transparent 32% 100%),
-    linear-gradient(180deg, #172b21 0 16%, #fff0d8 16% 28%, #e1b77f 28% 32%, #fff5e3 32% 100%);
-  clip-path: polygon(8% 22%, 44% 0, 92% 20%, 94% 100%, 7% 100%);
+  object-fit: cover;
 }
 
 .venue .underlink {

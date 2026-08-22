@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { Pause, Play } from 'lucide-react';
 import { weddingData } from './data/wedding';
 import oldPhotoImage from './assets/old-photo.jpg';
+import venueImage from './assets/Venue.jpeg';
 
 import './styles.css';
 
@@ -187,7 +188,7 @@ function Venue() {
         <Label>{weddingData.venue.city}</Label>
       </div>
       <figure className="venue-photo reveal">
-        <img src={"src/assets/Venue.jpeg"} alt="Alakapuri Convention Center" />
+        <img src={venueImage} alt="Alakapuri Convention Center" />
       </figure>
       <a className="underlink light reveal" href={weddingData.mapsUrl} target="_blank" rel="noreferrer">
         Get Directions <span aria-hidden="true">{'->'}</span>
