@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import { Pause, Play } from 'lucide-react';
 import { weddingData } from './data/wedding';
+import oldPhotoImage from './assets/old-photo.jpg';
 
 import './styles.css';
 
@@ -137,9 +138,8 @@ function ThenNow() {
       </div>
       <div className="compare-grid reveal">
         <figure className="compare-card old">
-           <img src={'src/assets/old-photo.jpg'} alt="Ganga and Goutham in 2016" />
+          <img src={oldPhotoImage} alt="Ganga and Goutham in 2016" />
           <figcaption>2016</figcaption>
-        
         </figure>
         <figure className="compare-card current">
           <img src={heroImage} alt="Ganga and Goutham in 2026" />
