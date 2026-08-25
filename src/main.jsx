@@ -2,13 +2,24 @@ import React, { useEffect, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import { Pause, Play } from 'lucide-react';
 import { weddingData } from './data/wedding';
+import heroImage from './assets/hero.jpeg';
+import firstPhotoTogetherImage from './assets/first photo together.jpeg';
+import graduationImage from './assets/Graduation.jpeg';
+import firstJobImage from './assets/first job.jpeg';
+import lastPhotoImage from './assets/last pic.jpeg';
+import nowImage from './assets/now.jpeg';
 import oldPhotoImage from './assets/old-photo.jpg';
 import venueImage from './assets/Venue.jpeg';
 
 import './styles.css';
 
-const heroImage = `${import.meta.env.BASE_URL}images/hero.jpg`;
 const envelopeCoverImage = `${import.meta.env.BASE_URL}images/cover-invitation.png`;
+const frameImages = {
+  college: firstPhotoTogetherImage,
+  graduation: graduationImage,
+  firstJob: firstJobImage,
+  walk: lastPhotoImage,
+};
 
 function useCountdown(targetDate) {
   const readTime = () => {
@@ -105,9 +116,13 @@ function Story() {
 }
 
 function PhotoTile({ item }) {
+  const image = frameImages[item.variant];
+
   return (
     <figure className={`photo-tile ${item.variant}`}>
-      <div className="photo-art" />
+      <div className="photo-art">
+        {image ? <img src={image} alt={item.title} /> : null}
+      </div>
       <figcaption>{item.title}</figcaption>
     </figure>
   );
@@ -143,7 +158,7 @@ function ThenNow() {
           <figcaption>2016</figcaption>
         </figure>
         <figure className="compare-card current">
-          <img src={heroImage} alt="Ganga and Goutham in 2026" />
+          <img src={nowImage} alt="Ganga and Goutham in 2026" />
           <figcaption>2026</figcaption>
         </figure>
       </div>
@@ -249,16 +264,8 @@ function Cover({ open, onOpen }) {
       onClick={onOpen}
       aria-label="Open wedding invitation"
     >
-      <span className="cover-envelope" style={{ '--cover-image': `url("${envelopeCoverImage}")` }}>
+      <span className="cover-envelope">
         <img className="cover-art" src={envelopeCoverImage} alt="" aria-hidden="true" />
-        <span className="cover-letter" aria-hidden="true">
-          <span>{weddingData.couple.display}</span>
-          <span>{weddingData.date.dotted}</span>
-        </span>
-        <span className="cover-flap cover-flap-top" aria-hidden="true" />
-        <span className="cover-flap cover-flap-left" aria-hidden="true" />
-        <span className="cover-flap cover-flap-right" aria-hidden="true" />
-        <span className="cover-flap cover-flap-bottom" aria-hidden="true" />
         <span className="cover-action">Tap to open</span>
       </span>
     </button>

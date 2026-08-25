@@ -44,7 +44,8 @@ export const weddingData = {
   ],
   frames: [
     { title: 'The college days.', variant: 'college' },
-    { title: 'First Job.', variant: 'rain' },
+    { title: 'Graduation day.', variant: 'graduation' },
+    { title: 'First Job.', variant: 'firstJob' },
     { title: 'The long walks home.', variant: 'walk' },
   ],
   families: [
