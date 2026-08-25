@@ -100,7 +100,6 @@ function Story() {
   return (
     <section className="paper story" id="story">
       <div className="section-title centered reveal">
-        <Label>Section One</Label>
         <h2>Our Story</h2>
         <Divider />
       </div>
@@ -134,7 +133,6 @@ function Frames() {
   return (
     <section className="paper frames" id="memories">
       <div className="section-title reveal">
-        <Label>Section Three</Label>
         <h2>Frames From Our Story</h2>
         <p className="script left">Somewhere between then and now...</p>
       </div>
@@ -173,7 +171,6 @@ function Family() {
   return (
     <section className="paper family" id="family">
       <div className="section-title centered reveal">
-        <Label>Section Four</Label>
         <h2>The People Who Have Been Part of Our Story</h2>
         <Divider />
       </div>
@@ -198,7 +195,6 @@ function Venue() {
   return (
     <section className="forest venue" id="wedding">
       <div className="venue-copy reveal">
-        <Label>Section Five</Label>
         <h2 className="script">And now, the next chapter.</h2>
         <p className="invite-line">With our hearts full, we invite you to celebrate this day with us.</p>
         <p className="date-line">{weddingData.date.dotted}</p>
@@ -220,7 +216,6 @@ function Music({ playing, onToggle }) {
   return (
     <section className="sage music" id="song">
       <div className="section-title centered reveal">
-        <Label>Section Seven</Label>
         <h2 className="script">One song. A thousand memories.</h2>
       </div>
       <button className="play-button reveal" type="button" onClick={onToggle}>
