@@ -558,8 +558,18 @@ figcaption {
 }
 
 .venue-copy h2 {
-  margin: 28px 0 62px;
+  margin: 28px 0 24px;
   color: var(--white);
+}
+
+.invite-line {
+  max-width: 660px;
+  margin: 0 auto 42px;
+  color: rgba(255, 250, 240, 0.84);
+  font-family: var(--font-serif);
+  font-size: clamp(1.35rem, 5.4vw, 1.9rem);
+  font-style: italic;
+  line-height: 1.35;
 }
 
 .venue-copy h3 {
@@ -673,14 +683,51 @@ figcaption {
   margin: 56px 0 26px;
   color: var(--forest);
   font-family: var(--font-sans);
-  font-size: clamp(1.18rem, 5.4vw, 1.55rem);
+  font-size: clamp(0.92rem, 4.15vw, 1.55rem);
   font-weight: 500;
-  letter-spacing: 0.28em;
+  letter-spacing: clamp(0.12em, 2.2vw, 0.28em);
+  line-height: 1.25;
+  white-space: nowrap;
   text-transform: uppercase;
 }
 
 .closing-copy .label + .label {
   margin-top: 14px;
+}
+
+.closing-place {
+  margin: 0;
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: clamp(0.58rem, 2.25vw, 0.75rem);
+  font-weight: 700;
+  letter-spacing: clamp(0.16em, 2.8vw, 0.44em);
+  line-height: 1.8;
+  text-transform: uppercase;
+}
+
+.closing-invite {
+  width: min(560px, 100%);
+  margin: 42px auto 0;
+  color: var(--forest);
+  font-size: clamp(1.3rem, 5.6vw, 1.85rem);
+}
+
+.end-mark {
+  display: flex;
+  justify-content: center;
+  width: min(260px, 74%);
+  margin: 46px auto 0;
+  border-top: 1px solid rgba(61, 57, 49, 0.2);
+}
+
+.end-mark span {
+  width: 9px;
+  height: 9px;
+  margin-top: -5px;
+  background: var(--gold);
+  border: 1px solid var(--paper);
+  transform: rotate(45deg);
 }
 
 .closing > img {

@@ -12,6 +12,7 @@ import nowImage from './assets/now.jpeg';
 import oldPhotoImage from './assets/old-photo.jpg';
 import venueImage from './assets/Venue.jpeg';
 import closingImage from './assets/closing.jpeg';
+import perfectSong from './assets/perfect_ed_sheeran.mp3';
 
 import './styles.css';
 
@@ -200,6 +201,7 @@ function Venue() {
       <div className="venue-copy reveal">
         <Label>Section Five</Label>
         <h2 className="script">And now, the next chapter.</h2>
+        <p className="invite-line">With our hearts full, we invite you to celebrate this day with us.</p>
         <p className="date-line">{weddingData.date.dotted}</p>
         <h3>{weddingData.venue.name}</h3>
         <Label>{weddingData.venue.city}</Label>
@@ -214,14 +216,7 @@ function Venue() {
   );
 }
 
-function Music() {
-  const [playing, setPlaying] = useState(false);
-  const audioRef = useRef(null);
-
-  const toggle = () => {
-    if (playing) audioRef.current?.pause();
-    setPlaying((value) => !value);
-  };
+function Music({ playing, onToggle }) {
 
   return (
     <section className="sage music" id="song">
@@ -229,12 +224,11 @@ function Music() {
         <Label>Section Seven</Label>
         <h2 className="script">One song. A thousand memories.</h2>
       </div>
-      <button className="play-button reveal" type="button" onClick={toggle}>
+      <button className="play-button reveal" type="button" onClick={onToggle}>
         {playing ? <Pause size={14} /> : <Play size={14} />}
-        {playing ? 'Pause Our Song' : 'Play Our Song'}
+        {playing ? 'Pause Perfect' : 'Play Perfect'}
       </button>
-      <p className="muted-label">Nothing plays until you press</p>
-      <audio ref={audioRef} preload="none" />
+      <p className="muted-label">Ed Sheeran . Perfect</p>
     </section>
   );
 }
@@ -251,9 +245,11 @@ function Closing() {
         <Divider />
         <h2>{weddingData.couple.mark}</h2>
         <Label>{weddingData.date.dotted}</Label>
-        <p style={{ fontSize: '0.75rem', fontWeight: '700', letterSpacing: '0.44em', textTransform: 'uppercase' }}>
-          Thiruvananthapuram
-        </p>
+        <p className="closing-place">Thiruvananthapuram</p>
+        <p className="closing-invite">Your presence would mean the world to us.</p>
+        <div className="end-mark" aria-hidden="true">
+          <span />
+        </div>
       </div>
       <img src={closingImage} alt="Ganga and Goutham" />
     </section>
@@ -278,6 +274,8 @@ function Cover({ open, onOpen }) {
 
 function App() {
   const [coverOpen, setCoverOpen] = useState(false);
+  const [songPlaying, setSongPlaying] = useState(false);
+  const audioRef = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -293,9 +291,36 @@ function App() {
     return () => observer.disconnect();
   }, []);
 
+  const playSong = () => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    audio.play()
+      .then(() => setSongPlaying(true))
+      .catch(() => setSongPlaying(false));
+  };
+
+  const toggleSong = () => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    if (songPlaying) {
+      audio.pause();
+      setSongPlaying(false);
+      return;
+    }
+
+    playSong();
+  };
+
+  const openInvitation = () => {
+    setCoverOpen(true);
+    playSong();
+  };
+
   return (
     <>
-      <Cover open={coverOpen} onOpen={() => setCoverOpen(true)} />
+      <Cover open={coverOpen} onOpen={openInvitation} />
       <main className={coverOpen ? 'invitation revealed' : 'invitation'} style={{ '--hero-image': `url("${heroImage}")` }}>
         <Hero />
         <Story />
@@ -303,9 +328,10 @@ function App() {
         <ThenNow />
         <Family />
         <Venue />
-        <Music />
+        <Music playing={songPlaying} onToggle={toggleSong} />
         <Closing />
       </main>
+      <audio ref={audioRef} src={perfectSong} preload="auto" loop />
     </>
   );
 }
