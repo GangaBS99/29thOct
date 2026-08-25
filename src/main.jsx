@@ -170,18 +170,6 @@ function Frames() {
           ))}
         </div>
       </div>
-      <div className="photo-row photo-row-reverse reveal" aria-hidden="true">
-        <div className="photo-track">
-          {scrollingFrames.map((item, index) => (
-            <PhotoTile item={item} key={`${item.title}-reverse-${index}`} />
-          ))}
-        </div>
-        <div className="photo-track">
-          {scrollingFrames.map((item, index) => (
-            <PhotoTile item={item} key={`${item.title}-reverse-loop-${index}`} />
-          ))}
-        </div>
-      </div>
     </section>
   );
 }

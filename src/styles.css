@@ -417,10 +417,6 @@ p {
   outline: 0;
 }
 
-.photo-row + .photo-row {
-  margin-top: 34px;
-}
-
 .photo-row::before,
 .photo-row::after {
   content: '';
@@ -450,11 +446,6 @@ p {
   padding-left: 24px;
   animation: frame-scroll 96s linear infinite;
   will-change: transform;
-}
-
-.photo-row-reverse .photo-track {
-  animation-direction: reverse;
-  animation-duration: 108s;
 }
 
 .photo-row:hover .photo-track,
