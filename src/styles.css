@@ -408,54 +408,19 @@ p {
 }
 
 .photo-row {
-  position: relative;
   display: flex;
-  width: 100%;
   gap: 20px;
-  overflow: hidden;
-  padding: 0 0 18px;
-  outline: 0;
-}
-
-.photo-row::before,
-.photo-row::after {
-  content: '';
-  position: absolute;
-  top: 0;
-  bottom: 18px;
-  z-index: 2;
-  width: 56px;
-  pointer-events: none;
-  background: linear-gradient(90deg, var(--paper), rgba(247, 241, 230, 0));
-}
-
-.photo-row::before {
-  left: 0;
-}
-
-.photo-row::after {
-  right: 0;
-  transform: rotate(180deg);
-}
-
-.photo-track {
-  display: flex;
-  flex: 0 0 auto;
-  gap: 20px;
-  min-width: max-content;
-  padding-left: 24px;
-  animation: frame-scroll 96s linear infinite;
-  will-change: transform;
-}
-
-.photo-row:hover .photo-track,
-.photo-row:focus-visible .photo-track {
-  animation-play-state: paused;
+  overflow-x: auto;
+  padding: 0 24px 18px;
+  scroll-padding-inline: 24px;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
 }
 
 .photo-tile {
   flex: 0 0 min(84vw, 344px);
   margin: 0;
+  scroll-snap-align: start;
 }
 
 .photo-art {
@@ -508,16 +473,6 @@ figcaption {
   font-family: var(--font-serif);
   font-size: 1.25rem;
   font-style: italic;
-}
-
-@keyframes frame-scroll {
-  from {
-    transform: translateX(0);
-  }
-
-  to {
-    transform: translateX(-100%);
-  }
 }
 
 .then-now {
@@ -882,9 +837,5 @@ figcaption {
   .reveal {
     opacity: 1;
     transform: none;
-  }
-
-  .photo-track {
-    animation: none;
   }
 }

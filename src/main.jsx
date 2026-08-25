@@ -32,13 +32,12 @@ const frameImages = {
   firstDayOfMca: firstDayOfMcaImage,
   firstNightOut: firstNightOutImage,
   firstTripTogether: firstTripTogetherImage,
-  graduation: graduationImage,
-  firstJob: firstJobImage,
   perfectProjectPartners: perfectProjectPartnersImage,
   photoshootDay: photoshootDayImage,
   tuitionTime: tuitionTimeImage,
+  graduation: graduationImage,
+  firstJob: firstJobImage,
   walk: walkingImage,
-  favoriteMoment: favoriteMomentImage,
 };
 const fixationReelUrl = 'https://www.instagram.com/reel/C50tPyYJyLy/';
 const fixationEmbedUrl = 'https://www.instagram.com/reel/C50tPyYJyLy/embed';
@@ -150,25 +149,16 @@ function PhotoTile({ item }) {
 }
 
 function Frames() {
-  const scrollingFrames = [...weddingData.frames, ...weddingData.frames];
-
   return (
     <section className="paper frames" id="memories">
       <div className="section-title reveal">
         <h2>Frames From Our Story</h2>
         <p className="script left">Somewhere between then and now...</p>
       </div>
-      <div className="photo-row reveal" aria-label="Frames from our story" tabIndex="0">
-        <div className="photo-track">
-          {scrollingFrames.map((item, index) => (
-            <PhotoTile item={item} key={`${item.title}-${index}`} />
-          ))}
-        </div>
-        <div className="photo-track" aria-hidden="true">
-          {scrollingFrames.map((item, index) => (
-            <PhotoTile item={item} key={`${item.title}-loop-${index}`} />
-          ))}
-        </div>
+      <div className="photo-row reveal" aria-label="Swipe left to see more frames">
+        {weddingData.frames.map((item) => (
+          <PhotoTile item={item} key={item.title} />
+        ))}
       </div>
     </section>
   );
