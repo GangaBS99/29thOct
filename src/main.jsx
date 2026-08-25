@@ -10,6 +10,7 @@ import lastPhotoImage from './assets/last pic.jpeg';
 import nowImage from './assets/now.jpeg';
 import oldPhotoImage from './assets/old-photo.jpg';
 import venueImage from './assets/Venue.jpeg';
+import closingImage from './assets/closing.jpeg';
 
 import './styles.css';
 
@@ -251,7 +252,7 @@ function Closing() {
         <Label>{weddingData.date.dotted}</Label>
         <Label>Thiruvananthapuram</Label>
       </div>
-      <img src={heroImage} alt="Ganga and Goutham" />
+      <img src={closingImage} alt="Ganga and Goutham" />
     </section>
   );
 }
