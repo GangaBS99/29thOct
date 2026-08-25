@@ -3,7 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { Pause, Play } from 'lucide-react';
 import { weddingData } from './data/wedding';
 import heroImage from './assets/hero.jpeg';
-import firstPhotoTogetherImage from './assets/first photo together.jpeg';
+import firstPhotoTogetherImage from './assets/first photo.jpeg';
 import graduationImage from './assets/Graduation.jpeg';
 import firstJobImage from './assets/first job.jpeg';
 import walkingImage from './assets/walk.jpeg';
@@ -22,6 +22,8 @@ const frameImages = {
   firstJob: firstJobImage,
   walk: walkingImage,
 };
+const fixationReelUrl = 'https://www.instagram.com/reel/C50tPyYJyLy/';
+const fixationEmbedUrl = 'https://www.instagram.com/reel/C50tPyYJyLy/embed';
 
 function useCountdown(targetDate) {
   const readTime = () => {
@@ -163,6 +165,28 @@ function ThenNow() {
         </figure>
       </div>
       <p className="script compare-note">Ten years. Same two people. Very different hairstyles.</p>
+    </section>
+  );
+}
+
+function FixationCeremony() {
+  return (
+    <section className="sage fixation">
+      <div className="fixation-copy reveal">
+        <Label>Fixation Ceremony</Label>
+        <p className="script">A small beginning to forever.</p>
+      </div>
+      <div className="fixation-reel reveal">
+        <iframe
+          src={fixationEmbedUrl}
+          title="Ganga and Goutham fixation ceremony"
+          loading="lazy"
+          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+        />
+      </div>
+      <a className="underlink fixation-link reveal" href={fixationReelUrl} target="_blank" rel="noreferrer">
+        Watch on Instagram <span aria-hidden="true">{'->'}</span>
+      </a>
     </section>
   );
 }
@@ -328,6 +352,7 @@ function App() {
         <Story />
         <Frames />
         <ThenNow />
+        <FixationCeremony />
         <Family />
         <Venue />
         <Music playing={songPlaying} onToggle={toggleSong} />
