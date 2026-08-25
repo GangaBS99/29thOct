@@ -7,6 +7,7 @@ import firstPhotoTogetherImage from './assets/first photo together.jpeg';
 import graduationImage from './assets/Graduation.jpeg';
 import firstJobImage from './assets/first job.jpeg';
 import lastPhotoImage from './assets/last pic.jpeg';
+import walkingImage from './assets/walk.jpeg';
 import nowImage from './assets/now.jpeg';
 import oldPhotoImage from './assets/old-photo.jpg';
 import venueImage from './assets/Venue.jpeg';
@@ -19,7 +20,7 @@ const frameImages = {
   college: firstPhotoTogetherImage,
   graduation: graduationImage,
   firstJob: firstJobImage,
-  walk: lastPhotoImage,
+  walk: walkingImage,
 };
 
 function useCountdown(targetDate) {
