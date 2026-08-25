@@ -695,20 +695,20 @@ figcaption {
   margin-top: 14px;
 }
 
-.closing-place {
+.closing-copy .closing-place {
   max-width: 100%;
   margin: 0 auto;
   color: var(--ink);
   font-family: var(--font-sans);
-  font-size: clamp(0.48rem, 1.95vw, 0.75rem);
+  font-size: clamp(0.48rem, 2.45vw, 0.75rem);
   font-weight: 700;
-  letter-spacing: clamp(0.08em, 1.75vw, 0.28em);
+  letter-spacing: clamp(0.06em, 1vw, 0.22em);
   line-height: 1.8;
-  overflow-wrap: anywhere;
+  white-space: nowrap;
   text-transform: uppercase;
 }
 
-.closing-invite {
+.closing-copy .closing-invite {
   width: min(560px, 100%);
   margin: 42px auto 0;
   color: var(--forest);
