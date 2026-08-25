@@ -695,6 +695,17 @@ figcaption {
   margin-top: 14px;
 }
 
+.closing-copy .closing-muhurtham {
+  margin: 18px auto 12px;
+  color: var(--forest);
+  font-family: var(--font-sans);
+  font-size: clamp(0.64rem, 2.4vw, 0.78rem);
+  font-weight: 700;
+  letter-spacing: clamp(0.12em, 1.45vw, 0.24em);
+  line-height: 1.7;
+  text-transform: uppercase;
+}
+
 .closing-copy .closing-place {
   max-width: 100%;
   margin: 0 auto;

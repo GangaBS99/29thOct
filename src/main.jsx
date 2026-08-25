@@ -11,7 +11,7 @@ import nowImage from './assets/now.jpeg';
 import oldPhotoImage from './assets/old-photo.jpg';
 import venueImage from './assets/Venue.jpeg';
 import closingImage from './assets/closing.jpeg';
-import perfectSong from './assets/perfect_ed_sheeran.mp3';
+import perfectSong from './assets/song.mp3';
 
 import './styles.css';
 
@@ -22,7 +22,6 @@ const frameImages = {
   firstJob: firstJobImage,
   walk: walkingImage,
 };
-const songStartTime = 30;
 
 function useCountdown(targetDate) {
   const readTime = () => {
@@ -245,6 +244,7 @@ function Closing() {
         <Divider />
         <h2>{weddingData.couple.mark}</h2>
         <Label>{weddingData.date.dotted}</Label>
+        <p className="closing-muhurtham">Muhurtham . 11:40 AM to 12:04 PM</p>
         <p className="closing-place">Thiruvananthapuram</p>
         <p className="closing-invite">Your presence would mean the world to us.</p>
       </div>
@@ -295,8 +295,11 @@ function App() {
     const audio = audioRef.current;
     if (!audio) return;
 
+    audio.muted = false;
+    audio.volume = 1;
+
     if (restart) {
-      audio.currentTime = songStartTime;
+      audio.currentTime = 0;
     }
 
     audio.play()
@@ -335,7 +338,14 @@ function App() {
         <Music playing={songPlaying} onToggle={toggleSong} />
         <Closing />
       </main>
-      <audio ref={audioRef} src={perfectSong} preload="auto" onEnded={() => setSongPlaying(false)} />
+      <audio
+        ref={audioRef}
+        src={perfectSong}
+        preload="auto"
+        onPlay={() => setSongPlaying(true)}
+        onPause={() => setSongPlaying(false)}
+        onEnded={() => setSongPlaying(false)}
+      />
     </>
   );
 }
