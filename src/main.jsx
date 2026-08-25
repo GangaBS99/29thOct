@@ -22,6 +22,7 @@ const frameImages = {
   firstJob: firstJobImage,
   walk: walkingImage,
 };
+const songStartTime = 30;
 
 function useCountdown(targetDate) {
   const readTime = () => {
@@ -290,9 +291,13 @@ function App() {
     return () => observer.disconnect();
   }, []);
 
-  const playSong = () => {
+  const playSong = (restart = false) => {
     const audio = audioRef.current;
     if (!audio) return;
+
+    if (restart) {
+      audio.currentTime = songStartTime;
+    }
 
     audio.play()
       .then(() => setSongPlaying(true))
@@ -314,7 +319,7 @@ function App() {
 
   const openInvitation = () => {
     setCoverOpen(true);
-    playSong();
+    playSong(true);
   };
 
   return (
@@ -330,7 +335,7 @@ function App() {
         <Music playing={songPlaying} onToggle={toggleSong} />
         <Closing />
       </main>
-      <audio ref={audioRef} src={perfectSong} preload="auto" loop />
+      <audio ref={audioRef} src={perfectSong} preload="auto" onEnded={() => setSongPlaying(false)} />
     </>
   );
 }
