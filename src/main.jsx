@@ -6,7 +6,6 @@ import heroImage from './assets/hero.jpeg';
 import firstPhotoTogetherImage from './assets/first photo together.jpeg';
 import graduationImage from './assets/Graduation.jpeg';
 import firstJobImage from './assets/first job.jpeg';
-import lastPhotoImage from './assets/last pic.jpeg';
 import walkingImage from './assets/walk.jpeg';
 import nowImage from './assets/now.jpeg';
 import oldPhotoImage from './assets/old-photo.jpg';
@@ -247,11 +246,11 @@ function Closing() {
         <Label>{weddingData.date.dotted}</Label>
         <p className="closing-place">Thiruvananthapuram</p>
         <p className="closing-invite">Your presence would mean the world to us.</p>
-        <div className="end-mark" aria-hidden="true">
-          <span />
-        </div>
       </div>
       <img src={closingImage} alt="Ganga and Goutham" />
+      <div className="end-mark" aria-hidden="true">
+        <span />
+      </div>
     </section>
   );
 }

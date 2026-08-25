@@ -675,7 +675,7 @@ figcaption {
   margin: 0 0 28px;
   color: var(--ink);
   font-family: var(--font-serif);
-  font-size: clamp(0.25rem, 7.5vw, 2.2rem);
+  font-size: clamp(1.35rem, 5.4vw, 1.9rem);
   line-height: 1.35;
 }
 
@@ -696,13 +696,15 @@ figcaption {
 }
 
 .closing-place {
-  margin: 0;
+  max-width: 100%;
+  margin: 0 auto;
   color: var(--ink);
   font-family: var(--font-sans);
-  font-size: clamp(0.58rem, 2.25vw, 0.75rem);
+  font-size: clamp(0.48rem, 1.95vw, 0.75rem);
   font-weight: 700;
-  letter-spacing: clamp(0.16em, 2.8vw, 0.44em);
+  letter-spacing: clamp(0.08em, 1.75vw, 0.28em);
   line-height: 1.8;
+  overflow-wrap: anywhere;
   text-transform: uppercase;
 }
 
@@ -717,7 +719,7 @@ figcaption {
   display: flex;
   justify-content: center;
   width: min(260px, 74%);
-  margin: 46px auto 0;
+  margin: 34px auto 42px;
   border-top: 1px solid rgba(61, 57, 49, 0.2);
 }
 
@@ -734,7 +736,7 @@ figcaption {
   width: 100%;
   height: 360px;
   object-fit: cover;
-  object-position: 64% 48%;
+  object-position: 64% 20%;
 }
 
 .reveal {
