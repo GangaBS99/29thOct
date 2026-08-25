@@ -270,6 +270,16 @@ p {
   color: var(--ink);
 }
 
+.swipe-hint {
+  margin: 18px 0 0;
+  color: rgba(61, 57, 49, 0.58);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.24em;
+  line-height: 1.7;
+  text-transform: uppercase;
+}
+
 .date-line {
   margin: 32px 0;
   color: inherit;

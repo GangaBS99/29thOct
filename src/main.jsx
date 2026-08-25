@@ -154,6 +154,7 @@ function Frames() {
       <div className="section-title reveal">
         <h2>Frames From Our Story</h2>
         <p className="script left">Somewhere between then and now...</p>
+        <p className="swipe-hint">Swipe left to see more</p>
       </div>
       <div className="photo-row reveal" aria-label="Swipe left to see more frames">
         {weddingData.frames.map((item) => (
