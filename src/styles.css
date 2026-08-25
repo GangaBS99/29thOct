@@ -408,17 +408,63 @@ p {
 }
 
 .photo-row {
+  position: relative;
   display: flex;
+  width: 100%;
   gap: 20px;
-  overflow-x: auto;
-  padding: 0 24px 18px;
-  scroll-snap-type: x mandatory;
+  overflow: hidden;
+  padding: 0 0 18px;
+  outline: 0;
+}
+
+.photo-row + .photo-row {
+  margin-top: 34px;
+}
+
+.photo-row::before,
+.photo-row::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 18px;
+  z-index: 2;
+  width: 56px;
+  pointer-events: none;
+  background: linear-gradient(90deg, var(--paper), rgba(247, 241, 230, 0));
+}
+
+.photo-row::before {
+  left: 0;
+}
+
+.photo-row::after {
+  right: 0;
+  transform: rotate(180deg);
+}
+
+.photo-track {
+  display: flex;
+  flex: 0 0 auto;
+  gap: 20px;
+  min-width: max-content;
+  padding-left: 24px;
+  animation: frame-scroll 96s linear infinite;
+  will-change: transform;
+}
+
+.photo-row-reverse .photo-track {
+  animation-direction: reverse;
+  animation-duration: 108s;
+}
+
+.photo-row:hover .photo-track,
+.photo-row:focus-visible .photo-track {
+  animation-play-state: paused;
 }
 
 .photo-tile {
   flex: 0 0 min(84vw, 344px);
   margin: 0;
-  scroll-snap-align: start;
 }
 
 .photo-art {
@@ -450,12 +496,37 @@ p {
   object-position: 52% 44%;
 }
 
+.photo-tile.firstPhotoTogether .photo-art img,
+.photo-tile.firstNightOut .photo-art img,
+.photo-tile.firstTripTogether .photo-art img,
+.photo-tile.bangaloreDays .photo-art img,
+.photo-tile.photoshootDay .photo-art img,
+.photo-tile.favoriteMoment .photo-art img {
+  object-position: 50% 42%;
+}
+
+.photo-tile.firstDayOfMca .photo-art img,
+.photo-tile.perfectProjectPartners .photo-art img,
+.photo-tile.tuitionTime .photo-art img {
+  object-position: 50% 38%;
+}
+
 figcaption {
   margin-top: 22px;
   color: var(--ink);
   font-family: var(--font-serif);
   font-size: 1.25rem;
   font-style: italic;
+}
+
+@keyframes frame-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
 }
 
 .then-now {
@@ -820,5 +891,9 @@ figcaption {
   .reveal {
     opacity: 1;
     transform: none;
+  }
+
+  .photo-track {
+    animation: none;
   }
 }

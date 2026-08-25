@@ -3,10 +3,19 @@ import { createRoot } from 'react-dom/client';
 import { Pause, Play } from 'lucide-react';
 import { weddingData } from './data/wedding';
 import heroImage from './assets/hero.jpeg';
-import firstPhotoTogetherImage from './assets/first photo.jpeg';
+import firstPhotoTogetherImage from './assets/first photo together.jpeg';
+import CollegeImage from './assets/first photo.jpeg';
+import bangaloreDaysImage from './assets/Bangalore days.jpeg';
+import firstDayOfMcaImage from './assets/first day of MCA.jpeg';
+import firstNightOutImage from './assets/First Night Out.jpeg';
+import firstTripTogetherImage from './assets/First Trip together.jpeg';
 import graduationImage from './assets/Graduation.jpeg';
 import firstJobImage from './assets/first job.jpeg';
+import perfectProjectPartnersImage from './assets/Perfect Project Partners.jpeg';
+import photoshootDayImage from './assets/Photoshoot day.jpeg';
+import tuitionTimeImage from './assets/Tuition time.jpeg';
 import walkingImage from './assets/walk.jpeg';
+import favoriteMomentImage from './assets/WhatsApp Image 2026-08-25 at 6.57.44 PM.jpeg';
 import nowImage from './assets/now.jpeg';
 import oldPhotoImage from './assets/old-photo.jpg';
 import venueImage from './assets/Venue.jpeg';
@@ -17,10 +26,19 @@ import './styles.css';
 
 const envelopeCoverImage = `${import.meta.env.BASE_URL}images/cover-invitation.png`;
 const frameImages = {
-  college: firstPhotoTogetherImage,
+  firstPhotoTogether: firstPhotoTogetherImage,
+  college: CollegeImage,
+  bangaloreDays: bangaloreDaysImage,
+  firstDayOfMca: firstDayOfMcaImage,
+  firstNightOut: firstNightOutImage,
+  firstTripTogether: firstTripTogetherImage,
   graduation: graduationImage,
   firstJob: firstJobImage,
+  perfectProjectPartners: perfectProjectPartnersImage,
+  photoshootDay: photoshootDayImage,
+  tuitionTime: tuitionTimeImage,
   walk: walkingImage,
+  favoriteMoment: favoriteMomentImage,
 };
 const fixationReelUrl = 'https://www.instagram.com/reel/C50tPyYJyLy/';
 const fixationEmbedUrl = 'https://www.instagram.com/reel/C50tPyYJyLy/embed';
@@ -132,16 +150,37 @@ function PhotoTile({ item }) {
 }
 
 function Frames() {
+  const scrollingFrames = [...weddingData.frames, ...weddingData.frames];
+
   return (
     <section className="paper frames" id="memories">
       <div className="section-title reveal">
         <h2>Frames From Our Story</h2>
         <p className="script left">Somewhere between then and now...</p>
       </div>
-      <div className="photo-row reveal" aria-label="Frames from our story">
-        {weddingData.frames.map((item) => (
-          <PhotoTile item={item} key={item.title} />
-        ))}
+      <div className="photo-row reveal" aria-label="Frames from our story" tabIndex="0">
+        <div className="photo-track">
+          {scrollingFrames.map((item, index) => (
+            <PhotoTile item={item} key={`${item.title}-${index}`} />
+          ))}
+        </div>
+        <div className="photo-track" aria-hidden="true">
+          {scrollingFrames.map((item, index) => (
+            <PhotoTile item={item} key={`${item.title}-loop-${index}`} />
+          ))}
+        </div>
+      </div>
+      <div className="photo-row photo-row-reverse reveal" aria-hidden="true">
+        <div className="photo-track">
+          {scrollingFrames.map((item, index) => (
+            <PhotoTile item={item} key={`${item.title}-reverse-${index}`} />
+          ))}
+        </div>
+        <div className="photo-track">
+          {scrollingFrames.map((item, index) => (
+            <PhotoTile item={item} key={`${item.title}-reverse-loop-${index}`} />
+          ))}
+        </div>
       </div>
     </section>
   );

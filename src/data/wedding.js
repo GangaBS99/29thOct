@@ -43,10 +43,19 @@ export const weddingData = {
     },
   ],
   frames: [
+    { title: 'First photo together.', variant: 'firstPhotoTogether' },
     { title: 'The college days.', variant: 'college' },
+    { title: 'First day of MCA.', variant: 'firstDayOfMca' },
+    { title: 'Tuition time.', variant: 'tuitionTime' },
+    { title: 'First night out.', variant: 'firstNightOut' },
+    { title: 'First trip together.', variant: 'firstTripTogether' },
+    { title: 'Perfect project partners.', variant: 'perfectProjectPartners' },
+    { title: 'Bangalore days.', variant: 'bangaloreDays' },
     { title: 'Graduation day.', variant: 'graduation' },
     { title: 'First Job.', variant: 'firstJob' },
+    { title: 'Photoshoot day.', variant: 'photoshootDay' },
     { title: 'The long walks home.', variant: 'walk' },
+    { title: 'A favorite moment.', variant: 'favoriteMoment' },
   ],
   families: [
     {
