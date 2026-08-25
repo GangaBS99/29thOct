@@ -251,7 +251,9 @@ function Closing() {
         <Divider />
         <h2>{weddingData.couple.mark}</h2>
         <Label>{weddingData.date.dotted}</Label>
-        <Label>Thiruvananthapuram</Label>
+        <p style={{ fontSize: '0.75rem', fontWeight: '700', letterSpacing: '0.44em', textTransform: 'uppercase' }}>
+          Thiruvananthapuram
+        </p>
       </div>
       <img src={closingImage} alt="Ganga and Goutham" />
     </section>

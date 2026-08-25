@@ -425,14 +425,29 @@ p {
   position: relative;
   overflow: hidden;
   aspect-ratio: 1 / 1.14;
-  background: rgba(40, 84, 59, 0.1);
+  background: #28543b;
 }
 
 .photo-art img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  object-position: 50% 50%;
+  object-fit: cover;
+}
+
+.photo-tile.college .photo-art img {
+  object-position: 50% 46%;
+}
+
+.photo-tile.graduation .photo-art img {
+  object-position: 50% 42%;
+}
+
+.photo-tile.firstJob .photo-art img {
+  object-position: 52% 38%;
+}
+
+.photo-tile.walk .photo-art img {
+  object-position: 52% 44%;
 }
 
 figcaption {
@@ -482,9 +497,11 @@ figcaption {
 .compare-card img {
   width: 100%;
   aspect-ratio: 1 / 1.24;
-  background: rgba(40, 84, 59, 0.1);
-  object-fit: contain;
-  object-position: 50% 50%;
+  object-fit: cover;
+}
+
+.compare-card.current img {
+  object-position: 68% 42%;
 }
 
 .compare-card.old .photo-art {
@@ -648,7 +665,7 @@ figcaption {
   margin: 0 0 28px;
   color: var(--ink);
   font-family: var(--font-serif);
-  font-size: clamp(1.65rem, 7.5vw, 2.2rem);
+  font-size: clamp(0.25rem, 7.5vw, 2.2rem);
   line-height: 1.35;
 }
 
@@ -664,16 +681,6 @@ figcaption {
 
 .closing-copy .label + .label {
   margin-top: 14px;
-}
-
-.closing-copy .label {
-  max-width: 100%;
-  overflow-wrap: anywhere;
-}
-
-.closing-copy .label:last-child {
-  font-size: clamp(0.52rem, 2.45vw, 0.66rem);
-  letter-spacing: clamp(0.12em, 2vw, 0.28em);
 }
 
 .closing > img {
