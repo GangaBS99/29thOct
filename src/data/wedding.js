@@ -50,6 +50,7 @@ export const weddingData = {
     { title: 'First night out.', variant: 'firstNightOut' },
     { title: 'First trip together.', variant: 'firstTripTogether' },
     { title: 'Perfect project partners.', variant: 'perfectProjectPartners' },
+    { title: 'During college trip.', variant: 'duringCollegeTrip' },
     { title: 'Bangalore days.', variant: 'bangaloreDays' },
     { title: 'Graduation day.', variant: 'graduation' },
     { title: 'First Job.', variant: 'firstJob' },

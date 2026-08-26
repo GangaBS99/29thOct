@@ -15,13 +15,13 @@ import perfectProjectPartnersImage from './assets/Perfect Project Partners.jpeg'
 import photoshootDayImage from './assets/Photoshoot day.jpeg';
 import tuitionTimeImage from './assets/Tuition time.jpeg';
 import walkingImage from './assets/walk.jpeg';
-import favoriteMomentImage from './assets/WhatsApp Image 2026-08-25 at 6.57.44 PM.jpeg';
+import favoriteMomentImage from './assets/favorite moment.jpeg';
 import nowImage from './assets/now.jpeg';
 import oldPhotoImage from './assets/old-photo.jpg';
 import venueImage from './assets/Venue.jpeg';
 import closingImage from './assets/closing.jpeg';
 import perfectSong from './assets/song.mp3';
-
+import duringCollegeTripImage from './assets/During College Trip.jpeg';
 import './styles.css';
 
 const envelopeCoverImage = `${import.meta.env.BASE_URL}images/cover-invitation.png`;
@@ -33,11 +33,13 @@ const frameImages = {
   firstNightOut: firstNightOutImage,
   firstTripTogether: firstTripTogetherImage,
   perfectProjectPartners: perfectProjectPartnersImage,
+  duringCollegeTrip: duringCollegeTripImage,
   photoshootDay: photoshootDayImage,
   tuitionTime: tuitionTimeImage,
   graduation: graduationImage,
   firstJob: firstJobImage,
   walk: walkingImage,
+  favoriteMoment: favoriteMomentImage,
 };
 const fixationReelUrl = 'https://www.instagram.com/reel/C50tPyYJyLy/';
 const fixationEmbedUrl = 'https://www.instagram.com/reel/C50tPyYJyLy/embed';
